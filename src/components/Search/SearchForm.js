@@ -10,7 +10,7 @@ export default class SearchForm extends Component {
     return (
       <div className="main-container">
         <div className="container-icon">
-            <SearchIcon />
+          <SearchIcon />
         </div>
         <InputBase 
           type="text"
@@ -18,7 +18,7 @@ export default class SearchForm extends Component {
           placeholder="Search something"
           onChange={search.query}
         />
-        <Button color="secondary" onClick={search.search}>Search</Button>
+        <Button color="secondary" onClick={search.search}>Go</Button>
       </div>
     )
   }

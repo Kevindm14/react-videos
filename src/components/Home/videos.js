@@ -9,7 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 
-const Videos = ({newVideo}) => {
+const Videos = ({newVideo, goTo}) => {
 
 	TimeAgo.locale(en);
 	const timeAgo = new TimeAgo('en-US');
@@ -35,6 +35,7 @@ const Videos = ({newVideo}) => {
             <CardMedia
               className={classes.media}
               image={newVideo.snippet.thumbnails.medium.url}
+              onClick={() => goTo(`/watch?v=${newVideo.id.videoId}`) }
             />
             <CardContent>
               <Typography variant="subtitle2" component="h2">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Logo from '../../assets/images/logo.png'
 import SearchForm from '../Search/SearchForm'
-import ListVideos from '../listVideos'
+import ListVideos from './listVideos'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography'
@@ -28,13 +28,12 @@ export default class home extends Component {
 							<img src={Logo} width="50" height="35" alt="logo" />
 						</Typography>
 						<SearchForm query={this.handleSearch} search={this.search} />
-
 						<AccountCircle />
 					</Toolbar>
 				</AppBar>
 
 				<Container maxWidth="xl" style={{ marginTop: '30px' }}>
-				  <ListVideos videos={this.state.videos}/>
+				<ListVideos videos={this.state.videos}/>
 				</Container>
 			</React.Fragment>
 		)

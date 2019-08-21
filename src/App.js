@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import Home from './components/Home/home'
+import VideoPreview from './components/videoPreview/page'
 
 class App extends Component {
   render() {
     return (
       <div>
         <Switch>
-          <Route path="/" component={Home}/>
+          <Route exact path="/" component={Home}/>
+          <Route path="/watch" render={() => <VideoPreview key={this.props.location.key}/> }/>
         </Switch>
       </div>
     )
@@ -34,4 +36,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
